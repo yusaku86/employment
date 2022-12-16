@@ -3,7 +3,7 @@ Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} frmUnpunched
    Caption         =   "未打刻者抽出"
    ClientHeight    =   3450
    ClientLeft      =   120
-   ClientTop       =   465
+   ClientTop       =   468
    ClientWidth     =   4200
    OleObjectBlob   =   "frmUnpunched.frx":0000
    StartUpPosition =   1  'オーナー フォームの中央
@@ -255,7 +255,7 @@ Continue:
     
     '// 未打刻が無ければシート名の先頭にOKとつける
     If WorksheetFunction.CountIf(Columns(5), "未打刻あり") + WorksheetFunction.CountIf(Columns(5), "要確認") = 0 Then
-        ActiveSheet.Name = "OK" & ActiveSheet.Name
+        ActiveSheet.Name = "OK" & Left(ActiveSheet.Name, 5)
     End If
     
 End Sub
